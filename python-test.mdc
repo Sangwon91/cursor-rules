@@ -3,7 +3,7 @@ description: Python test를 수행할 때 반영되는 규칙입니다.
 globs: */*.py
 alwaysApply: false
 ---
-### pytest를 위한 규칙 및 설정
+# pytest를 위한 규칙 및 설정
 
 1. **테스트 파일 및 함수 명명 규칙**
    - **파일명**: 테스트 파일은 `test_`로 시작하거나 `_test`로 끝나야 합니다. 예: `test_example.py`, `example_test.py`
