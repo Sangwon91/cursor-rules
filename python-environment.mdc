@@ -1,9 +1,8 @@
 ---
 description: Python 환경 설정 및 관리에 대한 규칙과 예시를 제공합니다.
 globs: */*
-alwaysApply: true
+alwaysApply: false
 ---
-
 # Python 환경 설정 및 관리
 
 ## Python 환경 초기화
