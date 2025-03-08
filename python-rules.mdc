@@ -18,4 +18,4 @@ alwaysApply: false
 
 # 코딩 스타일 가이드
 
-1. 특별한 이유가 없다면 PEP 8 코딩 가이드를 따른다.
+1. **Follow PEP 8**: Adhere to the Python Enhancement Proposal 8 style guide for formatting.
