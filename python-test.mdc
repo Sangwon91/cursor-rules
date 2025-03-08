@@ -1,0 +1,44 @@
+---
+description: Python test를 수행할 때 반영되는 규칙입니다.
+globs: */*.py
+alwaysApply: false
+---
+### pytest를 위한 규칙 및 설정
+
+1. **테스트 파일 및 함수 명명 규칙**
+   - **파일명**: 테스트 파일은 `test_`로 시작하거나 `_test`로 끝나야 합니다. 예: `test_example.py`, `example_test.py`
+   - **함수명**: 테스트 함수는 `test_`로 시작해야 합니다. 예: `def test_addition():`
+
+2. **테스트 디렉토리 구조**
+   - 프로젝트의 루트 디렉토리 또는 `tests`라는 별도의 디렉토리에 테스트 파일을 배치합니다.
+
+3. **`pytest.ini` 설정 파일**
+   - `pytest.ini` 파일을 프로젝트 루트에 생성하여 `pytest`의 동작을 설정합니다.
+   
+   ```ini
+   # pytest.ini
+   [pytest]
+   addopts = -v --tb=short
+   testpaths = tests
+   python_files = test_*.py *_test.py
+   python_functions = test_*
+   ```
+
+4. **`conftest.py` 파일**
+   - `conftest.py` 파일을 사용하여 공통 설정, 픽스처 등을 정의할 수 있습니다.
+
+5. **픽스처 사용**
+   - `@pytest.fixture` 데코레이터를 사용하여 테스트에 필요한 공통 설정을 정의합니다.
+   
+   ```python
+   import pytest
+
+   @pytest.fixture
+   def sample_data():
+       return {"key": "value"}
+   ```
+
+6. pytest가 설치되지 않았다면 다음과 같이 설치한다.
+  ```
+  uv add --dev pytest
+  ```
