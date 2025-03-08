@@ -1,0 +1,61 @@
+---
+description: Python 환경 설정 및 관리에 대한 규칙과 예시를 제공합니다.
+globs: */*
+alwaysApply: true
+---
+
+# Python 환경 설정 및 관리
+
+## Python 환경 초기화
+
+Python 프로젝트를 시작할 때는 가상 환경을 설정하는 것이 좋습니다. `uv`를 사용하여 가상 환경을 초기화할 수 있습니다.
+
+```bash
+$ uv init --lib --python 3.10
+```
+
+위 명령어는 프로젝트를 라이브러리 형태로 초기화 하며 Python 버전 3.10을 사용합니다.
+원하는 다른 Python version이 있다면 해당 버전을 사용하면 됩니다. 
+
+만약 my_project이름의 폴더에서 위 커맨드를 실행하면 `src/my_project` 경로에 __init__.py
+이 생성됩니다. 또한 가상 환경을 생성하면 `my_project` library도 자동으로 editable 옵션으로 설치되기 때문에
+추가로 sys.path등으로 경로를 지정할 필요가 없습니다.
+
+즉 이 가상환경을 활성화 한 상태라면 어떤 위치에서라도 언제나 my_proejct를 import 할 수 있습니다.
+
+## Python 라이브러리 설치
+
+프로젝트에 필요한 라이브러리를 설치하려면 `uv add` 명령어를 사용합니다. `uv add` 커맨드 외의 다른
+설치 방법은 사용하지 않습니다.
+
+```bash
+$ uv add requests
+```
+
+위 명령어는 `requests` 라이브러리를 설치하고, `uv.lock` 파일에 버전을 기록합니다.
+
+## Python 프로그램 실행
+
+설치된 라이브러리를 사용하여 Python 프로그램을 실행할 수 있습니다. `uv run` 명령어를 사용하여 프로그램을 실행합니다.
+
+```bash
+$ uv run python my_script.py
+```
+
+위 명령어는 `my_script.py` 파일을 실행합니다.
+
+## 추가 예시
+
+- 특정 Python 버전을 사용하여 가상 환경을 설정하려면 다음과 같은 커맨드를 사용합니다.
+
+```bash
+$ uv python pin 3.9
+```
+
+- `uv.lock` 파일을 `requirements.txt`로 내보내려면 다음 명령어를 사용합니다.
+
+```bash
+$ uv export --format requirements-txt
+```
+
+이 명령어는 `uv.lock` 파일을 `requirements.txt` 형식으로 변환합니다.

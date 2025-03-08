@@ -1,0 +1,6 @@
+---
+description: python을 사용하는 모든 과정에서 적용됩니다.
+globs: *.py,*.ipynb
+alwaysApply: false
+---
+[python-environment.mdc](mdc:python-environment.mdc)
