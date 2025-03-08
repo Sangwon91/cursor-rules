@@ -22,6 +22,8 @@ $ uv init --lib --python 3.10
 
 즉 이 가상환경을 활성화 한 상태라면 어떤 위치에서라도 언제나 my_proejct를 import 할 수 있습니다.
 
+특히 python test 코드를 작성할 때 `src.my_project.*` 형태가 아닌 `my_project.*` 형태로 작성해도 충분하다.
+
 ## Python 라이브러리 설치
 
 프로젝트에 필요한 라이브러리를 설치하려면 `uv add` 명령어를 사용합니다. `uv add` 커맨드 외의 다른
